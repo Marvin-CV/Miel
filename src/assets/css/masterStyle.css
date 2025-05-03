@@ -1,0 +1,533 @@
+:root {
+    --color-primary: #FFD400;
+    --color-btn:#EDC531;
+    --color-btn-secundary:rgba(237, 196, 49, 0.41);
+    --color-orange-opacity: rgba(255, 123, 0, 0.532);
+    --color-orange: #FBAF00;    
+    --color-yellow: #979797; 
+    --color-input:rgba(237, 196, 49, 0.2);
+    --color-input-hover:rgba(237, 196, 49, 0.4);
+    --color-input-focus:rgba(237, 196, 49, 0.6);
+    --color-shadow: rgba(0, 0, 0, 0.3);
+    --bg-divs: rgba(255, 213, 0, 0.414);
+    --bg-img: url('/img/Background3.jpg');
+    --bg-barra-lateral: rgba(237, 196, 49, 0.33);
+    --bg-body:#FFFCEB;
+    --bg-portada:#ffffff;
+    --color-black-o60: rgba(0, 0, 0, 0.6);
+    --color-danger-op: rgba(255, 0, 0, 0.578);
+    --color-danger: rgb(255, 0, 0);
+    --color-email:#E0FEFF;
+    --color-wa:#E0FFE4;
+    --color-fb:#E0F1FF;
+    --color-ig:#FFE1E0;
+    --bg-light:rgb(247, 233, 178);
+    --btn-sucess:rgb(83, 207, 0);
+    --btn-sucess-op:rgba(0, 123, 16, 0.371);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #323232;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Variables generales */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.d-flex-b{
+    display: grid;
+    grid-template-columns: 1.5fr 1.5fr 1.5fr;
+    margin: 20px 5% 20px 0;
+}
+
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-beetwen{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .item-fb{
+        flex-grow: 1;
+        flex-basis: 200;
+    }
+
+.m-5{
+    margin: 10px;
+}
+    .m-10{
+        margin: 20px;
+    }
+
+    .m-20{
+        margin: 40px;
+    }
+
+.mt-5{
+    margin-top: 10px;
+}
+    .mt-10{
+        margin-top: 20px;
+    }
+
+    .mt-20{
+        margin-top: 40px;
+    }
+
+.mb-5{
+    margin-bottom: 10px;
+}
+    .mb-10{
+        margin-bottom: 20px;
+    }
+
+    .mb-20{
+        margin-bottom: 40px;
+    }
+
+.ml-5{
+    margin-left: 10px;
+}
+    .ml-10{
+        margin-left: 20px;
+    }
+
+    .ml-20{
+        margin-left: 40px;
+    }
+
+.edit-button.active {
+    background: #f44336; /* Rojo para indicar "modo edición" */
+}
+
+.hidden {
+    display: none;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.center{
+    align-content: center;
+    align-items: center;
+}
+.txt-center{
+    text-align: center;
+}
+
+/*------------------------------------- estilo para inputs y botones ------------------------------------------*/
+/* botones de opciones */
+.barraLateral .navegation a{
+    white-space: nowrap;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--color-btn);
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 5px 2px var(--color-shadow);
+}
+
+    .barraLateral .navegation a:hover{
+        background-color: var(--color-orange);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+/* Clase especial para boton principal */
+
+/* clase para botones globales */
+.btn {
+    white-space: nowrap;
+    width: fit-content;
+    padding: 8px 16px;
+    height: 40px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    box-shadow: 0 5px 2px 0px var(--color-shadow);
+    background-color: var(--color-btn);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+    .btn:hover{
+        background-color: var(--color-orange);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active{
+        background-color: var(--color-orange);
+        box-shadow: inset 4px 5px 2px 0px var(--color-shadow);
+    }
+
+.btn-focus {
+    white-space: nowrap;
+    width: fit-content;
+    padding: 8px 16px;
+    height: 40px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    box-shadow:inset 4px 5px 2px 0px var(--color-shadow);
+    background-color: var(--color-orange);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.btn-secundary {
+    white-space: nowrap;
+    width: fit-content;
+    padding: 8px 16px;
+    height: 40px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    box-shadow: 0 5px 2px 0px var(--color-shadow);
+    background-color: var(--color-btn-secundary);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+    .btn-secundary:hover{
+        background-color: var(--color-orange);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-secundary:active{
+        background-color: var(--color-orange);
+        box-shadow: inset 4px 5px 2px 0px var(--color-shadow);
+    }
+
+.btn-danger {
+    white-space: nowrap;
+    width: fit-content;
+    padding: 8px 16px;
+    height: 40px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    box-shadow: 0 5px 2px 0px var(--color-shadow);
+    background-color: var(--color-danger-op);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    color: var(--bg-portada);
+}
+    .btn-danger:hover{
+        background-color: var(--color-danger);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-danger:active{
+        background-color: var(--color-danger);
+        box-shadow: inset 4px 5px 2px 0px var(--color-shadow);
+    }
+
+
+.botonBarra{
+    white-space: nowrap;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;  
+    margin-bottom: 70px;
+    box-shadow: 0 5px 2px 0px var(--color-shadow);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+    .botonBarra a{
+        display: flex;
+        align-items: center;
+    }
+
+    .botonBarra:hover {
+        background-color: var(--color-orange);
+        box-shadow: 0 0 20px rgba(63, 63, 63, 0.2);   
+    }
+
+    .botonBarra i{
+        min-width:50px;
+        font-size: 25px;
+    }
+
+.btn-ico-danger{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+    .btn-ico-danger i{
+        color: var(--color-danger-op);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .btn-ico-danger:hover i{
+        color: var(--color-danger);
+        transform: scale(1.2);
+    }
+
+.btn-ico{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 15px;
+}
+
+    .btn-ico i{
+        color: var(--btn-sucess-op);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .btn-ico:hover i{
+        color: var(--btn-sucess);
+        transform: scale(1.2);
+    }
+
+
+input{
+    width: 75%;
+    text-indent: 15px;
+    height: 40px;
+    margin: 10px 0;
+    padding-right: 10px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    font-size: 15px;
+    box-shadow: 0 5px 4px 0px var(--color-shadow);
+    background-color: var(--color-input);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+input:hover{
+    transition: all 0.4s ease-in-out;
+    background: var(--color-input-hover);
+}
+input:focus{
+    background: var(--color-input-focus);
+    transition: all 0.4s ease-in-out;
+}
+/* ESTILO PARA TABLAS */
+table {
+    width: 100%;
+    padding: 15px;
+}
+td{
+    height: 70px;
+    border-bottom: var(--color-shadow) 2px dashed;
+}
+
+/*-----------------------------------------------------------------------------------Funcion para rotar abeja de barra lateral------------------ */
+.bee{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    rotate: 40deg;
+    margin-right: 10px;
+}
+
+    .bee:hover{
+        transform: scale(1.3);
+        transition: all 0.4s ease-in-out;
+    }
+
+
+    .bee-dif{
+        margin-right: 10px;
+        width: 45px;
+        height: 45px;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        rotate: -40deg;
+        scale: -1px;
+        perspective-origin: 40% 50%;
+    }
+        .bee-dif:hover{
+            transition: all 0.4s ease-in-out;
+        }
+
+
+body{
+    background-color: var(--bg-body);
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/*----------------------------------------------------------------Barra lateral------------------ */
+
+.barraLateral {
+    width: 250px;
+    height: 100%;
+    padding: 20px 15px;
+    background-color: var(--bg-light);
+    transition: width 0.5s ease;
+    overflow: hidden;
+    position: fixed;
+    box-shadow: 0 -90px #FAFAFA;
+    z-index: 9999;
+}
+
+.barraLateral span{
+    font-size: 18px;
+    opacity: 1;
+    transition: opacity 0.5s ease, width 0.5s ease;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.barraLateral span.oculto{
+    opacity: 0;
+    width: 0;
+}
+
+.barraLateral .nombrePagina span{
+    margin-left: 5px;
+    font-size: 25px;
+}
+
+.miniBarra{
+    width: 45px;
+}
+
+.barraLateral .nombrePagina{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+}
+
+.barraLateral .nombrePagina i{
+    min-width: 50px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+
+}
+
+.barraLateral .nombrePagina:hover i{
+    color: var(--color-orange);
+
+}
+
+/*----------------------------------------------------------------Barra lateral(navegación)------------------ */
+.barraLateral .navegation li{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.barraLateral .navegation i{
+    min-width: 50px;
+    font-size: 20px;
+    margin-left: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.barraLateral .separador {
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin-bottom: 80px;
+}
+/*-------------------------------------------------------------------marcador de en que lugar del menu se encuentra------------------ */
+.barraLateral .navegation #inicio{
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.barraLateral .navegation #inicio i,
+.barraLateral .navegation #inicio span {
+    color: #02b1f4;
+}
+
+/*-------------------------------------------------------------------main------------------ */
+main{
+    margin-left: 300px;
+    padding: 20px;
+    transition: all 0.5s ease;                          
+}
+
+main.min-main{
+    margin-left: 80px;
+}
+
+.portada{
+    align-items: left;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.4s ease-in-out;
+    background-color: var(--bg-portada);
+    margin-bottom: 50px;
+}
+
+/*-------------------------------------------------------------------Footer------------------ */
+.footer {
+    padding: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-content{
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+/*---------------pagina reducida (telefonos o pantalla dividida)------------------ */
+
+@media (max-width:991px) {
+
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width:435px){
+    .footer {
+        padding: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        margin-left: 47px;
+    }
+}

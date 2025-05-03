@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/masterStyle.css">
+    <link rel="stylesheet" href="../css/carrito.css">
+    <title>Carrito</title>
+</head>
+<body>
+    <div class="barraLateral">
+        <div class="nombrePagina">
+            <img src="../img/bee.png" id="icloud" class="bee">
+            <span>Menú</span>
+        </div>
+        <button type="submit" class="botonBarra btn">
+            <a href="inicio">
+                <i class='bx bx-home-alt-2'></i>
+                <span>Inicio</span>
+            </a>
+        </button>
+
+        <nav class="navegation">
+            <ul>
+                <li>
+                    <a id="catalogo" href="catalogo">
+                        <i class='bx bx-store'></i>
+                        <span>Catalogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="carrito" href="carrito">
+                        <i class='bx bx-cart-alt'></i>
+                        <span>Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="inventario" href="inventario">
+                        <i class='bx bx-package'></i>
+                        <span>Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="pedidos" href="pedidos">
+                        <i class='bx bx-book-content'></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-lateral" id="ajustes" href="users">
+                        <i class='bx bx-cog' ></i>
+                        <span>Ajustes</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="separador"></div>
+    </div>
+    
+    <main>
+        <div class="carrito">
+            <h1>Carrito</h1>
+            <div class="container-carrito">
+                <div class="mt-10 mb-20">
+                    <a class="mt-10 btn-secundary" href="catalogo"> Realizar pedido</a>
+                </div>
+                <p id="carrito-vacio" class="carrito-vacio">Tú carrito está vacío.<i class='bx bx-sad bx-tada' ></i></p>
+
+                <div id="carrito-productos" class="carrito-productos enable">
+                    
+                    <!-- LOS PRODUCTOS SE AGREGARAN CON JS -->
+
+                    <!-- <div class="carrito-producto">
+                        <img class="producto-carrito-img" src="../img/productos/Analguesico2.jpg" alt="${producto.titulo}">
+                        <div class="carrito-producto-titulo">
+                            <small>titulo</small>
+                            <h3>Miel de 1l natural</h3>
+                        </div>
+                        <div class="carrito-producto-cantidad m-5">
+                            <small>cantidad</small>
+                            <p>3</p>
+                        </div>
+                        <div class="carrito-producto-precio m-5">
+                            <small>precio</small>
+                            <p>$200</p>
+                        </div>
+                        <div class="carrito-producto-subtotal m-5">
+                            <small>subtotal</small>
+                            <p>$600</p>
+                        </div>
+                        <button class="carrito-producto-eliminar"><i class='bx bx-trash-alt' ></i></button>
+                    </div> -->
+
+                </div>
+
+                <!-- botones de vacio y comprar -->
+                <div id="carrito-acciones" class="carrito-acciones disable">
+                     <div class="carrito-acciones-left">
+                        <button id="carrito-acciones-vaciar" class="btn-secundary">Vaciar carrito</button>
+                     </div>
+                     <div class="carrito-acciones-right">
+                        <div class="carrito-acciones-total">
+                            <p>total:</p>
+                            <p id="total">$200</p>
+                        </div>
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar ahora</button>
+                     </div>
+                </div>
+
+                <p id="carrito-comprado" class="carrito-comprado disable">Gracias por tu compra<i class='bx bx-sad bx-tada' ></i></p>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <h6>Copyright © Marvin Camacho | Danna Gomez | Jaime ibarra</h6>
+        </div>
+    </footer>
+
+    <script src="../js/general.js" ></script>
+    <script src="../js/carrito.js"></script>
+</body>
+</html>

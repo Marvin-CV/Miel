@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/masterStyle.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login</title>
+</head>
+<body>
+        <section class="formulario">
+            <div class="container-divs">
+                <div id="loginForm">
+                    <h1>Acceder</h1>
+                    <div class="social-icons-container">
+                        <a href="#" class="icon"> <i class='bx bxl-google-plus'></i></a>
+                        <a href="#" class="icon"> <i class='bx bxl-facebook'></i></a>
+                    </div>
+                    <div class="form-message-container">
+                        <span>O usa tu correo y contraseña</span>
+                    </div>
+                    <form action="/api/autenticar" method="POST">
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        <input type="password" name="contraseña" placeholder="Contraseña" required>
+                        <button class="btn" type="submit">Iniciar sesión</button>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </form>
+                    <p> ¿No tienes una cuenta? <a href="#" id="showSignup">Registrarte</a></p>
+                </div>
+
+                <div class="signup-form hidden" id="signupForm">
+                    <h1>Crear cuenta</h1>
+                    <div class="social-icons-container">
+                        <a href="#" class="icon"> <i class='bx bxl-google-plus'></i></a>
+                        <a href="#" class="icon"> <i class='bx bxl-facebook'></i></a>
+                    </div>
+                    <div class="form-message-container">
+                        O usa tu correo para registrarte
+                    </div>
+                    <form>
+                        <input type="text" name="nombre" placeholder="Nombre completo" required>
+                        <input type="email" name="email" placeholder="Correo electrónico" required>
+                        <input type="password" name="contraseña" placeholder="Contraseña" required>
+                        <button class="btn" type="submit">Registrarse</button>
+                    </form>
+                    <p>¿Ya tienes una cuenta? <a href="#" id="showLogin">Iniciar sesión</a></p>
+                </div>
+            </div>
+        </section>
+</body>
+<script src="../js/login.js"></script>
+</html>

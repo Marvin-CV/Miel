@@ -1,0 +1,11 @@
+/* Boton para marcar focus de barra lateral */
+#ajustes{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--color-orange);
+    transition: all 0.4s ease-in-out;
+    box-shadow: inset 4px 5px 2px var(--color-shadow);
+}

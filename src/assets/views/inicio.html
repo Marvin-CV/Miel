@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/masterStyle.css">
+    <link rel="stylesheet" href="../css/inicio.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="barraLateral">
+        <div class="nombrePagina">
+            <img src="../img/bee.png" id="icloud" class="bee">
+            <span>Menú</span>
+        </div>
+        <button id="inicio" type="submit" class="btn-focus">
+            <a href="">
+                <i class='bx bx-home-alt-2'></i>
+                <span>Inicio</span>
+            </a>
+        </button>
+
+        <nav class="navegation">
+            <ul>
+                <li>
+                    <a id="catalogo" href="catalogo">
+                        <i class='bx bx-store'></i>
+                        <span>Catalogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="carrito" href="carrito">
+                        <i class='bx bx-cart-alt'></i>
+                        <span>Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="inventario" href="inventario">
+                        <i class='bx bx-package'></i>
+                        <span>Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="pedidos" href="pedidos">
+                        <i class='bx bx-book-content'></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-lateral" id="ajustes" href="users">
+                        <i class='bx bx-cog' ></i>
+                        <span>Ajustes</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="separador"></div>
+    </div>
+    
+    <main>
+        <h1>Inicio</h1>
+        <div class="portada">
+            <h2>Mielapas</h2>
+            <h4 class="mt-5">¿Qué ofrecemos?</h4>
+            <p class="mt-5">Productos derivados de la miel, así como la miel pura, dando 
+                productos de calidad. <br>Puedes hacer tu pedido, apartarlo y pagar 
+                en efectivo o por tarjeta, aún no contamos con entregas a domicilio 
+                pero se espera poder implementarlo muy pronto, ven a realizar tus pedidos, 
+                te esperamos
+            </p>
+            <div class="mt-10">
+                <a class="mt-10 btn-secundary" href="catalogo"> Realizar pedido</a>
+            </div>
+        </div>
+
+        <div class="portada">
+            <h4 class="mt-5">Redes Sociales & Contacto Directo</h4>
+            <div class="mt-20 flex-beetwen">
+                <div class="item-fb">
+                    <div class="flex-column center">
+                        <div class="redcard" style="background: var(--color-email);">
+                            <h5>Email</h5>
+                            <img src="../img/gmail.png" class="redimg">
+                        </div>
+                        <div class="mt-5 mb-10">
+                            <a class="btn-secundary" href="">Enviar Correo</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-fb">
+                    <div class="flex-column center">
+                        <div class="redcard" style="background: var(--color-wa);">
+                            <h5>WhatsApp</h5>
+                            <img src="../img/WhatsApp.webp" class="redimg mt-5">
+                        </div>
+                        <div class="mt-5 mb-10">
+                            <a class="btn-secundary" href="">Enviar WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-fb">
+                    <div class="flex-column center">
+                        <div class="redcard" style="background: var(--color-fb);">
+                            <h5>Facebook</h5>
+                            <img src="../img/fb.png" class="redimg mt-5">
+                        </div>
+                        <div class="mt-5 mb-10">
+                            <a class="btn-secundary" href="">Ver Página</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-fb">
+                    <div class="flex-column center">
+                        <div class="redcard" style="background: var(--color-ig);">
+                            <h5>Instagram</h5>
+                            <img src="../img/instagram.png" class="redimg mt-5">
+                        </div>
+                        <div class="mt-5 mb-10">
+                            <a class="btn-secundary" href="">Ver Página</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <h6>Copyright © Marvin Camacho | Danna Gomez | Jaime ibarra</h6>
+        </div>
+    </footer>
+
+    <script src="../js/general.js" ></script>
+</body>
+</html>

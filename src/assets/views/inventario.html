@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/masterStyle.css">
+    <link rel="stylesheet" href="../css/inventario.css">
+    <title>Inventario</title>
+    <script>
+        // Función para obtener y mostrar los productos
+        async function fetchProducts() {
+            try {
+                const response = await fetch('/api/productos');
+                if (!response.ok) {
+                    throw new Error('Error al obtener los productos');
+                }
+                const products = await response.json();
+                const productList = document.getElementById('product-list');
+                products.forEach(product => {
+                    const li = document.createElement('li');
+                    li.textContent = `${product.titulo} - $${product.precio}`;
+                    productList.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Llama a la función cuando la página se cargue
+        window.onload = fetchProducts;
+    </script>
+</head>
+<body>
+    <div class="barraLateral">
+        <div class="nombrePagina">
+            <img src="../img/bee.png" id="icloud" class="bee">
+            <span>Menú</span>
+        </div>
+        <button type="submit" class="botonBarra btn">
+            <a href="inicio">
+                <i class='bx bx-home-alt-2'></i>
+                <span>Inicio</span>
+            </a>
+        </button>
+
+        <nav class="navegation">
+            <ul>
+                <li>
+                    <a id="catalogo" href="catalogo">
+                        <i class='bx bx-store'></i>
+                        <span>Catalogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="carrito" href="carrito">
+                        <i class='bx bx-cart-alt'></i>
+                        <span>Carrito</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="inventario" href="inventario">
+                        <i class='bx bx-package'></i>
+                        <span>Inventario</span>
+                    </a>
+                </li>
+                <li>
+                    <a id="pedidos" href="pedidos">
+                        <i class='bx bx-book-content'></i>
+                        <span>Pedidos</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="btn-lateral" id="ajustes" href="users">
+                        <i class='bx bx-cog' ></i>
+                        <span>Ajustes</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="separador"></div>
+    </div>
+    
+    <main>
+        <h1>Inventario</h1>
+        <div class="mb-10">
+            <button class="btn-focus">Productos</button>
+        </div>
+        <div class="contenedor-buscador">
+            <div class="buscador-style">
+                <input class="transparente" type="search" placeholder="Buscar por nombre o código" id="buscador">
+                <button id="" class="btn-buscarIn">Buscar</button>
+            </div>
+            <button id="agregar-producto" class="btn-secundary"><i class='bx bx-plus'></i> Agregar Producto</button>
+        </div>
+        <!-- nuevo producto -->
+        <div id="nuevo-producto" class="portada hidden">
+            <h3>Nuevo producto</h3>
+            <div class="mt-20 flex-beetwen">
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Codigo</h5>
+                        <input type="text" id="codigoproducto">
+                    </div>
+                </div>
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Nombre</h5>
+                        <input type="text" id="nombreproducto">
+                    </div>
+                </div>
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Precio</h5>
+                        <input type="text" id="precioproducto">
+                    </div>
+                </div>
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Stock</h5>
+                        <input type="text" id="stockproducto">
+                    </div>
+                </div>
+            </div>
+            <div class="flex-beetwen">
+                <div class="ml-20 flex-column">
+                    <button type="button" class="btn-secundary" id="guardarNuevoBtn">Guardar</button>
+                </div>
+                <div class="ml-20 flex-column">
+                    <button type="button" class="btn-danger" id="cerrar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        <!-- editar producto -->
+        <div id="editar-producto" class="portada hidden">
+            <h3>Editar producto</h3>
+            <div class="mt-20 flex-beetwen">
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Codigo</h5>
+                        <input type="text" id="codigo-producto">
+                    </div>
+                </div>
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Nombre</h5>
+                        <input type="text" id="nombre-producto">
+                    </div>
+                </div>
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Precio</h5>
+                        <input type="text" id="precio-producto">
+                    </div>
+                </div>
+                <div class="item-fb mb-10">
+                    <div class="flex-column">
+                        <h5>Stock</h5>
+                        <input type="text" id="stock-producto">
+                    </div>
+                </div>
+            </div>
+            <div class="flex-beetwen">
+                <div class="ml-20 flex-column">
+                    <button type="button" class="btn-secundary" id="actualizarBtn">Actualizar</button>
+                </div>
+                <div class="ml-20 flex-column">
+                    <button type="button" class="btn-danger" id="cancelarEdicionBtn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="portada">
+            <table>
+                <thead>
+                    <tr style="font-weight: 600;">
+                        <td>Codigo</td>
+                        <td>Producto</td>
+                        <td>Precio</td>
+                        <td>Stock</td>
+                        <td>Accionees</td>
+                    </tr>
+                </thead>
+                <tbody id="tabla-inventario">
+
+                    <!-- Aquí se llenará la tabla con los productos -->
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <h6>Copyright © Marvin Camacho | Danna Gomez | Jaime ibarra</h6>
+        </div>
+    </footer>
+
+    <script src="../js/general.js" ></script>
+    <script src="../js/inventario.js"></script>
+</body>
+</html>

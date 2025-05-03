@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+body {
+    background-image: url('/img/Background3.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1{
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+/* formato de formulario */
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+/* contenedor de divs */
+.container-divs{
+    width: 380px;
+    box-shadow: 0 0 30px var(--color-shadow);
+    border-radius: 15px;
+    padding: 30px 40px;
+    background-color: var(--bg-divs);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease-in-out;
+}
+
+.container-divs:hover{
+    box-shadow: 0 0 30px var(--color-orange);
+}
+/* ----------------------------------para botones con iconos------------------------ */
+/* contenedor de iconos general */
+.social-icons-container{
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* contenedor de iconos por separado */
+.social-icons-container .icon{
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 10px;
+    box-shadow: 0 0 15px var(--color-shadow);
+    border-radius: 15px;
+    padding: 7px 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.social-icons-container .icon:hover{
+    border-color: var(--color-orange);
+    box-shadow: 0 0 20px var(--color-orange-opacity);
+}
+
+/* color de iconos i */
+.social-icons-container .icon i{
+    transition: all 0.4s ease-in-out;
+}
+.social-icons-container .icon:hover i {
+    color: var(--color-orange);
+}
+
+/*----------------------------- para colorear links en letras---------------------------------- */
+a{
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+}
+
+a:hover{
+    color: var(--color-yellow);
+}
+/* para ocultar divs */
+.hidden {
+    display: none;
+}
+
+/* para el mensaje de olvidaste tu contraseña y registrarse */
+.form-message-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}

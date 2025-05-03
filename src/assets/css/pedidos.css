@@ -1,0 +1,62 @@
+/* Boton para marcar focus de barra lateral */
+#pedidos{
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--color-orange);
+    transition: all 0.4s ease-in-out;
+    box-shadow: inset 4px 5px 2px var(--color-shadow);
+}
+
+.transparente{
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border-radius: 15px 0 0 15px;
+}
+
+/* CONTENEDOR DE INPUT Y BOTON */
+.contenedor-buscador{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+    height: 35px;
+}
+
+/* ESTILO DE INPUT TIPO SEARCH */
+.buscador-style{
+    display: flex;
+    box-shadow: 0 5px 2px 0px var(--color-shadow);
+    border-radius: 15px;
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+}
+
+    .buscador-style:hover{
+        box-shadow: 0 0 20px var(--color-shadow);
+    }
+
+/* BOTON DE BUSCAR */
+.btn-buscarIn{
+    border: 0;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: var(--color-btn-secundary);
+    transition: all 0.4s ease-in-out;
+    width: 30%;
+    height: 100%;
+}
+    .btn-buscarIn:hover{
+        background-color: var(--color-orange);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-buscarIn:active{
+        background-color: var(--color-orange);
+        box-shadow: inset 4px 5px 2px 0px var(--color-shadow);
+    }
