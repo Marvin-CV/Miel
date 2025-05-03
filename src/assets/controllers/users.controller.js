@@ -4,7 +4,7 @@ import pool from '../models/conectbd.js';
 export const obtenerUsuario = async (req, res) => {
     try {
         // Obtener el ID del usuario desde el token JWT
-        const userId = req.userId;
+        const userId = req.user ? req.user.userId : null;
 
         // Consultar la base de datos para obtener la información del usuario
         const [user] = await pool.query('SELECT nombre, email FROM usuarios WHERE id = ?', [userId]);
