@@ -3,17 +3,13 @@ import pool from '../models/conectbd.js';
 // Función para obtener la información del usuario logueado
 export const obtenerUsuario = async (req, res) => {
     try {
-        // Obtener el ID del usuario desde el token JWT
         const userId = req.user ? req.user.userId : null;
-
-        // Consultar la base de datos para obtener la información del usuario
         const [user] = await pool.query('SELECT nombre, email FROM usuarios WHERE id = ?', [userId]);
 
         if (user.length === 0) {
             return res.status(404).json({ error: 'Usuario no encontrado' });
         }
 
-        // Devolver la información del usuario
         res.status(200).json(user[0]);
     } catch (error) {
         console.error('Error obteniendo información del usuario:', error);
@@ -26,7 +22,6 @@ export const actualizarUsuario = async (req, res) => {
     const { nombre, email } = req.body;
 
     try {
-        // Obtener el ID del usuario desde el token JWT
         const userId = req.userId;
 
         // Actualizar la información del usuario en la base de datos
@@ -49,7 +44,6 @@ export const actualizarUsuario = async (req, res) => {
 // Función para eliminar el usuario logueado
 export const eliminarUsuario = async (req, res) => {
     try {
-        // Obtener el ID del usuario desde el token JWT
         const userId = req.userId;
 
         // Eliminar el usuario de la base de datos

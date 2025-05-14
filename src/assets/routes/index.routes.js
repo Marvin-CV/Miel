@@ -12,13 +12,12 @@ import cartRoutes from '../routes/cart.routes.js';
 
 const router = Router();
 
-// Obtener __dirname en módulos ES6
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Rutas de API y otros endpoints
 
-// Ruta para obtener productos (por ejemplo, desde index.controller.js)
+// Ruta para obtener productos
 router.get('/api/productos', getProducts);
 
 // Rutas para usuarios

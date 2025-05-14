@@ -10,7 +10,7 @@ async function cargarProductosCarrito() {
     try {
         const response = await fetch('/api/cart');
         const productosEnCarrito = await response.json();
-        console.log("Productos en el carrito obtenidos:", productosEnCarrito); // 👀 Verificación
+        console.log("Productos en el carrito obtenidos:", productosEnCarrito); // Verificación
 
         if (productosEnCarrito.length > 0) {
             contenedorCarritoVacio.classList.add("disable");
@@ -118,12 +118,12 @@ async function obtenerProductosDelCarrito() {
            headers: { "Content-Type": "application/json" },
            body: JSON.stringify({ 
               cartItems: await obtenerProductosDelCarrito(), // obtenemos los productos del carrito
-              total: await calcularTotal()  // usamos await para obtener el total correcto
+              total: await calcularTotal() 
            })
         });
         const data = await response.json();
         console.log(data);
-        // Actualizamos la vista: vacíamos el carrito y mostramos mensaje de compra exitosa.
+        // Actualizamos la vista: vacíamos el carrito y mostramos mensaje de compra exitosa (usamos en console log para que nos avise cual era el problema en caso de haberlo).
         contenedorCarritoVacio.classList.add("disable");
         contenedorCarritoProductos.classList.add("disable");
         contenedorCarritoAcciones.classList.add("disable");
@@ -149,6 +149,10 @@ botonVaciar.addEventListener("click", vaciarCarrito);
 botonComprar.addEventListener("click", comprarCarrito);
 
 document.addEventListener('DOMContentLoaded', cargarProductosCarrito);
+
+//el codgi comentado se usaba pero nos mando errores pero lo dejamos por si lo necesitabamos
+
+
 // async function comprarCarrito() {
 //     try {
 //         const response = await fetch('/api/cart/checkout', { method: 'POST' });

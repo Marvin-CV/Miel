@@ -1,3 +1,4 @@
+// pusimos bastantes consoles.log para ver donde estaban surgiendo los errores y las partes de codigo comentadas son las que no funcionaban pero las usamos para mejorarlas
 async function cargarInventario() {
     try {
         const response = await fetch('/api/inventario');
@@ -7,11 +8,11 @@ async function cargarInventario() {
         const tabla = document.querySelector("#tabla-inventario");
 
         if (!tabla) {
-            console.error("❌ Error: No se encontró el <tbody> en el DOM.");
+            console.error(" Error: No se encontró el <tbody> en el DOM.");
             return;
         }
 
-        tabla.innerHTML = ""; // Limpia la tabla antes de agregar nuevos productos
+        tabla.innerHTML = ""; 
 
         productos.forEach(producto => {
             const tr = document.createElement("tr");
@@ -29,9 +30,9 @@ async function cargarInventario() {
             tabla.appendChild(tr);
         });
 
-        asignarEventos(); // Asegurar que los botones de edición y eliminación siguen funcionando
+        asignarEventos();
     } catch (error) {
-        console.error("❌ Error al cargar el inventario:", error);
+        console.error("Error al cargar el inventario:", error);
     }
 }
 
@@ -107,7 +108,7 @@ document.querySelector("#buscador").addEventListener("input", async () => {
     const terminoBusqueda = document.querySelector("#buscador").value.trim().toLowerCase();
     
     if (terminoBusqueda.length === 0) {
-        cargarInventario(); // Si está vacío, recarga toda la lista
+        cargarInventario(); 
         return;
     }
 
@@ -211,7 +212,7 @@ document.querySelector("#cerrar").addEventListener("click", () => {
 //         try {
 //             const response = await fetch(`/api/inventario/${id_producto}`);
 //             const producto = await response.json();
-//             console.log("Producto obtenido para edición:", producto); // 👀 Verificación
+//             console.log("Producto obtenido para edición:", producto); // Verificación
 
 //             if (!producto || !producto.id_producto) {
 //                 console.error("Error: No se encontraron los datos del producto.");
@@ -242,7 +243,7 @@ document.addEventListener("click", async (event) => {
             console.log("✔ Producto obtenido para edición:", producto);
 
             if (!producto || !producto.id_producto) {
-                console.error("❌ Error: No se encontraron los datos del producto.");
+                console.error("Error: No se encontraron los datos del producto.");
                 return;
             }
 
@@ -267,11 +268,11 @@ document.addEventListener("click", async (event) => {
         const stock = parseInt(document.querySelector("#stock-producto").value);
 
         if (!id_producto) {
-            console.error("❌ Error: id_producto no está definido.");
+            console.error("Error: id_producto no está definido.");
             return;
         }
 
-        console.log(`✔ Enviando actualización a: /api/inventario/${id_producto}`); // 👀 Verificar la URL
+        console.log(`✔ Enviando actualización a: /api/inventario/${id_producto}`); 
 
         try {
             const resp = await fetch(`/api/inventario/${id_producto}`, {
@@ -290,7 +291,7 @@ document.addEventListener("click", async (event) => {
             document.querySelector("#editar-producto").classList.add("hidden");
             cargarInventario();
         } catch (error) {
-            console.error("❌ Error al actualizar el producto:", error);
+            console.error("Error al actualizar el producto:", error);
             alert("Error al actualizar el producto. Revisa la consola para más detalles.");
         }
     }
@@ -311,7 +312,7 @@ document.addEventListener("click", async (event) => {
             console.log("✔ Producto eliminado:", data);
             cargarInventario();
         } catch (error) {
-            console.error("❌ Error al eliminar el producto:", error);
+            console.error("Error al eliminar el producto:", error);
             alert("Error al eliminar el producto. Revisa la consola para más detalles.");
         }
     }
@@ -326,7 +327,7 @@ function asignarEventos() {
             try {
                 const response = await fetch(`/api/inventario/${id_producto}`);
                 const producto = await response.json();
-                console.log("✔ Producto obtenido para edición:", producto);
+                console.log("Producto obtenido para edición:", producto);
 
                 // Mostrar el formulario de edición y llenar los datos
                 document.querySelector("#editar-producto").classList.remove("hidden");
@@ -336,7 +337,7 @@ function asignarEventos() {
                 document.querySelector("#stock-producto").value = producto.stock;
                 
             } catch (error) {
-                console.error("❌ Error al obtener el producto para edición:", error);
+                console.error("Error al obtener el producto para edición:", error);
             }
         });
     });

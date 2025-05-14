@@ -14,19 +14,15 @@ app.use(express.static('src/assets', {
     }
 }));
 
-// Middleware para logging
+// Middleware para loging
 app.use(morgan('dev'));
 
-// Middleware para parsear JSON
 app.use(express.json());
 
-// Middleware para parsear datos de formularios (urlencoded)
 app.use(express.urlencoded({ extended: true }));
 
-// Usar las rutas (esto debe ir después de los middlewares de parseo)
 app.use(router);
 
-// Iniciar el servidor
 app.listen(PORT, () => {
     console.log("Servidor corriendo en el puerto", PORT);
 });

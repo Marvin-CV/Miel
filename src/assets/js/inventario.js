@@ -1,6 +1,4 @@
-// =======================================================
 // Función para cargar el inventario y renderizar la tabla
-// =======================================================
 async function cargarInventario() {
     try {
       const response = await fetch('/api/inventario');
@@ -31,7 +29,7 @@ async function cargarInventario() {
         `;
         tabla.appendChild(tr);
       });
-      asignarEventos(); // Si se requiere asignar eventos a botones nuevos
+      asignarEventos();
     } catch (error) {
       console.error("Error al cargar el inventario:", error);
     }
@@ -39,9 +37,7 @@ async function cargarInventario() {
   
   document.addEventListener("DOMContentLoaded", cargarInventario);
   
-  // =======================================================
-  // Agregar nuevo producto (formulario "Nuevo producto")
-  // =======================================================
+  // Agregar nuevo producto 
   document.querySelector("#guardarNuevoBtn").addEventListener("click", async () => {
     const id = document.querySelector("#codigoproducto").value.trim();
     const titulo = document.querySelector("#nombreproducto").value.trim();
@@ -81,9 +77,7 @@ async function cargarInventario() {
     document.querySelector("#nuevo-producto").classList.add("hidden");
   });
   
-  // =======================================================
-  // Abrir formulario de edición (al hacer clic en el botón "editar")
-  // =======================================================
+  // Abrir formulario de edición 
   document.addEventListener("click", async (event) => {
     if (event.target.closest(".editar-producto")) {
       const boton = event.target.closest(".editar-producto");
@@ -111,9 +105,7 @@ async function cargarInventario() {
     document.querySelector("#editar-producto").classList.add("hidden");
   });
   
-  // =======================================================
-  // Actualizar producto (desde el formulario de edición)
-  // =======================================================
+  // Actualizar producto
   document.addEventListener("click", async (event) => {
     if (event.target.closest("#actualizarBtn")) {
       const id_producto = document.querySelector("#codigo-producto").value;
@@ -146,9 +138,8 @@ async function cargarInventario() {
     }
   });
   
-  // =======================================================
-  // Eliminar producto desde la tabla (delegation)
-  // =======================================================
+
+  // Eliminar producto desde la tabla 
   document.addEventListener("click", async (event) => {
     if (event.target.closest(".eliminar-producto")) {
       const boton = event.target.closest(".eliminar-producto");
@@ -167,9 +158,7 @@ async function cargarInventario() {
     }
   });
   
-  // =======================================================
   // Funcionalidad de búsqueda
-  // =======================================================
   document.querySelector("#buscador").addEventListener("input", async () => {
     const terminoBusqueda = document.querySelector("#buscador").value.trim().toLowerCase();
     if (terminoBusqueda.length === 0) {
@@ -189,9 +178,8 @@ async function cargarInventario() {
     }
   });
   
-  // =======================================================
+
   // Función para renderizar productos filtrados
-  // =======================================================
   function mostrarProductos(productos) {
     const tabla = document.querySelector("#tabla-inventario");
     if (!tabla) {
@@ -220,9 +208,8 @@ async function cargarInventario() {
     asignarEventos();
   }
   
-  // =======================================================
+
   // Función para reasignar eventos a botones de edición (opcional si se usan eventos delegados)
-  // =======================================================
   function asignarEventos() {
     document.querySelectorAll(".editar-producto").forEach(boton => {
       boton.addEventListener("click", async (event) => {

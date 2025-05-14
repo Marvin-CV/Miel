@@ -53,7 +53,7 @@ export const addToCart = async (req, res) => {
 
 // Eliminar un producto del carrito
 export const removeFromCart = async (req, res) => {
-    const userId = 1; // Reemplazar según la sesión
+    const userId = 1; // Reemplazar según la sesión (no lo reemplaazmos para que nos dejara vizualizar)
     const { productId } = req.params;
     try {
         await pool.query(
@@ -86,7 +86,6 @@ export const clearCart = async (req, res) => {
 export const checkoutCart = async (req, res) => {
     const { cartItems, total } = req.body;
     const id_usuario = req.user ? (req.user.id || req.user.userId) : 1;
-    // Asumiendo que ya tienes el nombre del cliente en req.user o por defecto
     const cliente = req.user && req.user.nombre ? req.user.nombre : "Cliente Test";
     
     // Para el campo de productos, solo mostramos título y cantidad:
@@ -118,7 +117,7 @@ export const checkoutCart = async (req, res) => {
         );
       }
       
-      // Insertar el pedido en historial_pedidos
+      // Insertar el pedido en historial pedidos
       await connection.query(
         "INSERT INTO historial_pedidos (id_cliente, nombre_cliente, productos, total, estado, fecha) VALUES (?, ?, ?, ?, 'pendiente', NOW())",
         [id_usuario, cliente, productosDetalle, total]
@@ -140,7 +139,8 @@ export const checkoutCart = async (req, res) => {
       if (connection) connection.release();
     }
   };
-  
+
+  // Esto se comento porque no estaba funcionando correctamente pero se dejo porque sirvio para algunos casos
 
 // export const checkoutCart = async (req, res) => {
 //     const { cartItems, total } = req.body;

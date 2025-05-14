@@ -1,4 +1,4 @@
-import pool from '../models/conectbd.js'; // Ajusta la ruta según tu estructura
+import pool from '../models/conectbd.js';
 
 // Obtener todos los productos
 export const getProductos = async (req, res) => {
@@ -28,7 +28,7 @@ export const getProductoById = async (req, res) => {
   }
 };
 
-// Crear un nuevo producto (incluye stock)
+// Crear un nuevo producto 
 export const createProducto = async (req, res) => {
   const { id, titulo, imagen, precio, stock } = req.body;
   try {
@@ -50,10 +50,9 @@ export const createProducto = async (req, res) => {
   }
 };
 
-// Actualizar un producto (incluye stock)
+// Actualizar un producto
 export const updateProducto = async (req, res) => {
   const { titulo, imagen, precio, stock } = req.body;
-  // Extraemos el parámetro con el nombre id_producto (según la ruta)
   const { id_producto } = req.params; 
   try {
     const [result] = await pool.query(
@@ -72,7 +71,6 @@ export const updateProducto = async (req, res) => {
 
 // Eliminar un producto
 export const deleteProducto = async (req, res) => {
-  // Usamos el parámetro id_producto para eliminar
   const { id_producto } = req.params;
   try {
     const [result] = await pool.query(

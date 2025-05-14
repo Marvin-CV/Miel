@@ -1,6 +1,6 @@
 import pool from '../models/conectbd.js'; // Ajusta la ruta según tu estructura
 
-// GET /api/historial/pendientes
+
 export const getPedidosPendientes = async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT * FROM historial_pedidos WHERE estado = 'pendiente'");
@@ -11,7 +11,7 @@ export const getPedidosPendientes = async (req, res) => {
   }
 };
 
-// GET /api/historial/entregados
+
 export const getPedidosEntregados = async (req, res) => {
     try {
       let querySQL = "SELECT * FROM historial_pedidos WHERE estado = 'entregado'";
@@ -27,12 +27,9 @@ export const getPedidosEntregados = async (req, res) => {
       console.error("Error al obtener pedidos entregados:", error);
       res.status(500).json({ message: "Error al obtener pedidos entregados" });
     }
-  };
+};
   
   
-  
-
-// PUT /api/historial/:id_pedido/entregar
 export const entregarPedido = async (req, res) => {
   const { id_pedido } = req.params;
   try {

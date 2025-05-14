@@ -45,7 +45,7 @@ async function cargarProductos() {
 
 async function agregarAlCarrito(e) {
     const IdBoton = e.currentTarget.id;
-    console.log("ID del producto capturado:", IdBoton);  // 👀 Debug en frontend
+    console.log("ID del producto capturado:", IdBoton);  
 
     // Verificar si el ID del producto es válido
     if (!IdBoton || IdBoton === "undefined") {
@@ -68,7 +68,7 @@ async function agregarAlCarrito(e) {
         return;
     }
 
-    console.log("Datos del producto a enviar:", productoAgregado);  // 👀 Verificar datos antes de enviarlos
+    console.log("Datos del producto a enviar:", productoAgregado); 
 
     try {
         const resp = await fetch('/api/cart/add', {
@@ -78,13 +78,12 @@ async function agregarAlCarrito(e) {
         });
 
         const data = await resp.json();
-        console.log("Respuesta del servidor:", data); // 👀 Verificar respuesta del backend
+        console.log("Respuesta del servidor:", data); 
 
         if (!resp.ok) {
             throw new Error(data.message || "Error desconocido");
         }
 
-        // Feedback visual
         e.target.innerHTML = '<i class="bx bx-check"></i> ¡Agregado!';
         setTimeout(() => {
             e.target.innerHTML = '<i class="bx bx-cart-add"></i> Agregar';
@@ -96,5 +95,5 @@ async function agregarAlCarrito(e) {
 }
 
 
-// Inicialización: cargar productos al cargar la página
+
 document.addEventListener('DOMContentLoaded', cargarProductos);

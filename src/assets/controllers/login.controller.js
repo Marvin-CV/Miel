@@ -18,15 +18,15 @@ export const autenticarUsuario = async (req, res) => {
 
         // Crear un token JWT
         const token = jwt.sign(
-            { userId: user[0].id }, // Payload: información que quieres almacenar en el token
-            'tu_clave_secreta', // Clave secreta para firmar el token (cámbiala por una clave segura)
+            { userId: user[0].id }, // Payload: información que se almacenara en el token de logeo
+            'tu_clave_secreta',
             { expiresIn: '1h' } // Tiempo de expiración del token
         );
 
         // Devolver el token y la información del usuario
         res.status(200).json({
             success: true,
-            token, // Envía el token al frontend
+            token, 
             redirectTo: '/inicio' // Ruta de redirección
         });
     } catch (error) {
@@ -46,9 +46,9 @@ export const registrarUsuario = async (req, res) => {
             return res.status(400).json({ error: 'El correo electrónico ya está registrado' });
         }
 
-        // Insertar el nuevo usuario en la base de datos (sin hashear la contraseña)
+        // Insertar el nuevo usuario en la base de datos (sin hashear la contraseña para poder visualizarla en la base de datos en caso de que lo pida algun maestro)
         const query = 'INSERT INTO usuarios (nombre, email, contraseña) VALUES (?, ?, ?)';
-        const values = [nombre, email, contraseña]; // Almacenar la contraseña en texto plano
+        const values = [nombre, email, contraseña]; 
 
         const [result] = await pool.query(query, values);
 

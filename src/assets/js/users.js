@@ -130,7 +130,6 @@ editButton.addEventListener("click", () => {
   // Alternar clase "active" en el botón
   editButton.classList.toggle("active");
   
-  // Cambiar texto del botón (opcional)
   if (card2.classList.contains("hidden")) {
     editButton.classList.add("btn-secundary");
     editButton.classList.remove("btn-focus");

@@ -1,16 +1,16 @@
-// Seleccionar elementos del DOM
+
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
 const showSignupBtn = document.getElementById('showSignup');
 const showLoginBtn = document.getElementById('showLogin');
 
-// Cambiar al formulario de registro cuando se hace clic en "Registrarte"
+// Registrarte
 showSignupBtn.addEventListener('click', () => {
     loginForm.classList.add('hidden');
     signupForm.classList.remove('hidden');
 });
 
-// Cambiar al formulario de inicio de sesión cuando se hace clic en "Iniciar sesión"
+// Iniciar sesión
 showLoginBtn.addEventListener('click', () => {
     loginForm.classList.remove('hidden');
     signupForm.classList.add('hidden');
@@ -43,11 +43,11 @@ signupForm.querySelector('form').addEventListener('submit', async (e) => {
             loginForm.classList.remove('hidden'); // Cambiar al formulario de inicio de sesión
             signupForm.classList.add('hidden'); // Ocultar el formulario de registro
         } else {
-            alert(data.error); // Mostrar mensaje de error
+            alert(data.error); // Mostrar mensaje de error para saber cual era el error en específico
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Error al registrar el usuario'); // Mostrar mensaje de error genérico
+        alert('Error al registrar el usuario'); // Mostrar mensaje de error 
     }
 });
 
@@ -83,6 +83,6 @@ loginForm.querySelector('form').addEventListener('submit', async (e) => {
         }
     } catch (error) {
         console.error('Error:', error);
-        alert('Error al iniciar sesión'); // Mostrar mensaje de error genérico
+        alert('Error al iniciar sesión'); // Mostrar mensaje de error para saber cual es el error en específico
     }
 });
